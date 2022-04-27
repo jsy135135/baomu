@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>保姆列表</title>
+    <style>
+      *,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #f2f2f2;
+      }
+      .nav {
+        background-color: #00a0fe;
+        color: white;
+        font-size: 20px;
+        line-height: 40px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        text-align: center;
+      }
+      .item {
+        display: flex;
+        padding: 10px;
+        height: 120px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 12px;
+      }
+      .item > :first-child {
+        width: 100px;
+        height: 100%;
+      }
+      .item > :first-child > img {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+      }
+      .info {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .info > div {
+        font-size: 14px;
+      }
+      .info > :first-child {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .info > div > span:nth-child(1) {
+        padding-right: 5px;
+        border-right: 1px rgb(230, 223, 223) solid;
+      }
+      .info > div > span:nth-child(2) {
+        padding-left: 5px;
+        padding-right: 5px;
+        border-right: 1px rgb(230, 223, 223) solid;
+      }
+      .info > div > span:nth-child(3) {
+        padding-left: 5px;
+      }
+      .bottom {
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        height: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #e7e7e7;
+      }
+      .bottom > div {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        text-align: center;
+      }
+      .bottom > div > img {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 40px"></div>
+    <div class="nav">最佳保姆</div>
+    <!-- 保姆列表 -->
+    <div id="app">
+      <!-- 单个展示 -->
+    </div>
+    <div
+      style="
+        position: fixed;
+        right: 6%;
+        bottom: 100px;
+        width: 45px;
+        background: black;
+        opacity: 0.6;
+        border-radius: 50%;
+        display: none;
+      "
+      id="toTop"
+    >
+      <img src="./images/rocket.png" width="40px" height="40px" alt="" />
+    </div>
+    <div class="bottom">
+      <div><img src="./images/index.png" alt="" /><span>首页</span></div>
+      <div><img src="./images/baomu.png" alt="" /><span>保姆</span></div>
+      <div><img src="./images/user.png" alt="" /><span>我的</span></div>
+    </div>
+    <script>
+      var list = [
+        {
+          bmid: 1,
+          bmname: "小崔",
+          bmage: 18,
+          salary: 3600,
+          edu: "清华大学",
+          jobtime: 8,
+          home: "北京",
+          work: ["扫地", "带孩子", "做饭"],
+          imgs: ["1.jpg", "2.jpg", "3.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+        {
+          bmid: 2,
+          bmname: "小王",
+          bmage: 25,
+          salary: 6000,
+          edu: "北京大学",
+          jobtime: 3,
+          home: "北京",
+          work: ["作业辅导", "插花", "园艺"],
+          imgs: ["4.jpg", "5.jpg", "6.jpg"],
+        },
+      ];
+
+      // 渲染模板
+      function loadData() {
+        let template = "";
+        list.forEach((item, index) => {
+          // 单个模板
+          template += `<div class="item">
+        <!-- 图片 -->
+        <div>
+          <img src="./images/1.png" alt="" />
+        </div>
+        <!-- 信息展示 -->
+        <div class="info">
+          <!-- 名字 -->
+          <div>${item.bmname}</div>
+          <!-- 年龄 | 学校 | 工作经验 -->
+          <div>
+            <span>${item.bmage}岁</span><span>${item.edu}</span><span>${item.jobtime}年工作经验</span>
+          </div>
+          <!-- 月薪 -->
+          <!-- <div>月薪:3600</div> -->
+          <!-- 籍贯 -->
+          <div>北京</div>
+          <!-- 工作内容 -->
+          <div><span>${item.work[0]}</span><span>${item.work[1]}</span><span>${item.work[2]}</span></div>
+        </div>
+      </div>`;
+        });
+        console.log(template);
+        document.getElementById("app").innerHTML = template;
+      }
+      loadData();
+      // 监听滚动事件
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          document.getElementById("toTop").style.display = "";
+        } else {
+          document.getElementById("toTop").style.display = "none";
+        }
+      });
+      document.getElementById("toTop").onclick = () => {
+        back_top();
+      };
+      // 延时回到顶部
+      function back_top() {
+        let y = scrollY;
+        let timer = setInterval(() => {
+          if (y > 0) {
+            y -= 20;
+            scrollTo(0, y);
+            return;
+          }
+          clearInterval(timer);
+        }, 10);
+      }
+    </script>
+  </body>
+</html>
